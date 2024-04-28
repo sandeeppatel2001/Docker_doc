@@ -19,10 +19,10 @@ Docker simplifies application creation, deployment, and running through containe
 
 # Table of Contents:
 - [1. INTRODUCTION TO DOCKER:](#introduction-to-docker)
-- [Basic Terminology:]()
-  - [Image:](#sub-content-1)
-  - [Container:](#steps-during-requirements)
-  - [Dockerfile:](#steps-during-design--prototyping)
+- [Basic Terminology]()
+  - [Image](#image)
+  - [Container](#container)
+  - [Dockerfile](#dockerfile)
 - [Installation Commands]()
 - [Docker Login Commands]()
 - [DOCKERFILE]()
@@ -55,6 +55,13 @@ Docker simplifies application creation, deployment, and running through containe
 ## INTRODUCTION TO DOCKER:
 Docker is a platform for developing, shipping, and running applications inside containers. Containers allow developers to package an application and its dependencies into a standardized unit for software development, making it easy to deploy applications across different environments.
 (sub contents must be started with triple # )
+## Basic Terminology
+### Image
+A read-only template used to create containers. Images are built from Dockerfiles and can be shared and reused across different environments.
+### Container:
+A runnable instance of an image. Containers run applications and contain everything needed to run the application, including the code, runtime, libraries, and dependencies.
+### Dockerfile: 
+A text document that contains instructions for building a Docker image. Dockerfiles define the environment inside a container, including the base image, dependencies, and runtime configuration.
 
 ### [Sub content 1]
 
