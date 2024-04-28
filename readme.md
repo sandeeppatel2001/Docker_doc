@@ -18,7 +18,7 @@ Docker simplifies application creation, deployment, and running through containe
 
 
 # Table of Contents:
-- [1. INTRODUCTION TO DOCKER:](#introduction-to-docker:)
+- [1. INTRODUCTION TO DOCKER:](#introduction-to-docker)
 - [Basic Terminology:]()
   - [Image:](#sub-content-1)
   - [Container:](#steps-during-requirements)
