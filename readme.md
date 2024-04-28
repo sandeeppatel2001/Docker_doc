@@ -18,7 +18,7 @@ Docker simplifies application creation, deployment, and running through containe
 
 
 # Table of Contents:
-- [1. INTRODUCTION TO DOCKER:](#content-1)
+- [1. INTRODUCTION TO DOCKER:](#INTRODUCTION-TO-DOCKER:)
 - [Basic Terminology:]()
   - [Image:](#sub-content-1)
   - [Container:](#steps-during-requirements)
@@ -52,7 +52,7 @@ Docker simplifies application creation, deployment, and running through containe
 ----
 
 
-## [Content 1]
+## [INTRODUCTION TO DOCKER:]
 Docker is a platform for developing, shipping, and running applications inside containers. Containers allow developers to package an application and its dependencies into a standardized unit for software development, making it easy to deploy applications across different environments.
 (sub contents must be started with triple # )
 
