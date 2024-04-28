@@ -12,7 +12,7 @@ Docker simplifies application creation, deployment, and running through containe
 
 ## Version History.
 
-- Version: 1.0, Author: Sandeep Patel, Last Updated: April 29th, 2024, Created: Mon Day Year.
+- Version: 1.0, Author: Sandeep Patel, Last Updated: April 29th, 2024, Created: April 17th, 2024.
 
 -------
 
@@ -53,7 +53,7 @@ Docker simplifies application creation, deployment, and running through containe
 
 
 ## [Content 1]
-
+Docker is a platform for developing, shipping, and running applications inside containers. Containers allow developers to package an application and its dependencies into a standardized unit for software development, making it easy to deploy applications across different environments.
 (sub contents must be started with triple # )
 
 ### [Sub content 1]
