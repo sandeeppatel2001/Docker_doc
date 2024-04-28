@@ -63,5 +63,9 @@ A runnable instance of an image. Containers run applications and contain everyth
 ### Dockerfile: 
 A text document that contains instructions for building a Docker image. Dockerfiles define the environment inside a container, including the base image, dependencies, and runtime configuration.
 
-### [Sub content 1]
+### [Installation]
+```
+sudo apt update
+```
+
 
