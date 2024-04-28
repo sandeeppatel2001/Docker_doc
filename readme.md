@@ -1,31 +1,36 @@
-# [Document Title]
-
-This document outlines ..... 
+# DOCKER DOCUMENTATION
+Docker simplifies application creation, deployment, and running through containers, providing a convenient utility for packaging and running applications in a semi-isolated environment.
 
 
 ### References.
-(if any references else remove this section. Contains high level references which lead to overall document contribution)
 - gitlab.com
+- Books: "Docker Deep Dive" by Nigel Poulton, "The Docker Book" by James Turnbull
+- Online Courses: Docker Mastery on Udemy, Docker Deep Dive on Pluralsight
 
 
 ----
 
 ## Version History.
 
-- Version: 1.0, Author: [AUTHOR NAME], Last Updated: Mon Day Year, Created: Mon Day Year.
-(Eg: Version: 1.0, Author: helloauther,  Last Updated: , Created: April 4th, 2024.)
+- Version: 1.0, Author: Sandeep Patel, Last Updated: April 29th, 2024, Created: Mon Day Year.
 
 -------
 
 
 # Table of Contents:
-- [Content1](#content-1)
-  - [Sub Content 1](#sub-content-1)
-  - [Requirements Stage](#steps-during-requirements)
-  - [Design Stage](#steps-during-design--prototyping)
-  - [Development Stage](#steps-during-development)
-  - [Testing Stage](#steps-during-testing)
-  - [Release Stage](#steps-during-release)
+- [1. INTRODUCTION TO DOCKER:](#content-1)
+- [Basic Terminology:]()
+  - [Image:](#sub-content-1)
+  - [Container:](#steps-during-requirements)
+  - [Dockerfile:](#steps-during-design--prototyping)
+- [Installation Commands]()
+- [Docker Login Commands]()
+- [DOCKERFILE]()
+- [Image]()
+  - [Image Management Commands]()
+  - [CUSTOM IMAGES:]()
+  - [Image Transfer Commands]()
+- [
 
 
 ----
