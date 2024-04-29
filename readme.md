@@ -19,18 +19,15 @@ Docker simplifies application creation, deployment, and running through containe
 
 # Table of Contents:
 - [1. INTRODUCTION TO DOCKER:](#introduction-to-docker)
-- [Basic Terminology]()
-  - [Image](#image)
-  - [Container](#container)
-  - [Dockerfile](#dockerfile)
 - [Installation Commands on Ubuntu](#installation-on-ubuntu)
-- [Docker Login Commands]()
-- [DOCKERFILE]()
-- [Image]()
-  - [Image Management Commands]()
-  - [CUSTOM IMAGES:]()
-  - [Image Transfer Commands]()
-- [Docker Hub Commands]()
+- [Basic Terminology]()
+  - [Dockerfile](#dockerfile)
+  - [Image](#image)
+    - [Image Management Commands]()
+    - [CUSTOM IMAGES:]()
+    - [Image Transfer Commands]()
+  - [Container](#container)
+- [Docker Login And Pushing Docker Images to a Docker Repository](#docker-login-and-pushing-docker-images-to-a-docker-repository)
 - [General Docker Commands]()
 - [CONTAINER MANAGEMENT:]()
 - [Docker Image Management Commands]()
@@ -55,13 +52,6 @@ Docker simplifies application creation, deployment, and running through containe
 ## INTRODUCTION TO DOCKER:
 Docker is a platform for developing, shipping, and running applications inside containers. Containers allow developers to package an application and its dependencies into a standardized unit for software development, making it easy to deploy applications across different environments.
 (sub contents must be started with triple # )
-## Basic Terminology
-### Image
-A read-only template used to create containers. Images are built from Dockerfiles and can be shared and reused across different environments.
-### Container:
-A runnable instance of an image. Containers run applications and contain everything needed to run the application, including the code, runtime, libraries, and dependencies.
-### Dockerfile: 
-A text document that contains instructions for building a Docker image. Dockerfiles define the environment inside a container, including the base image, dependencies, and runtime configuration.
 
 ### [Installation on Ubuntu]
 First, update your existing list of packages:
@@ -101,6 +91,43 @@ The output should be similar to the following, showing that the service is activ
 
 <img width="503" alt="Screenshot 2024-04-29 112530" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/30f1a73c-bd15-4db9-a529-a635e13f0ba8">
 
+## Basic Terminology
+### Dockerfile: 
+A text document that contains instructions for building a Docker image. Dockerfiles define the environment inside a container, including the base image, dependencies, and runtime configuration.
+### Image
+A read-only template used to create containers. Images are built from Dockerfiles and can be shared and reused across different environments.
+- To build a Docker image using Dockerfile, navigate to the directory containing the Dockerfile and run:
+```
+docker build -t my-node-app .
+```
+This command builds a Docker image named my-node-app based on the instructions in the Dockerfile.
+- Listing Images
+```
+  docker image ls
+```
+- From a Remote GIT Repository
+```
+docker build github.com/creack/docker-firefox
+```
+- Building from a Remote Dockerfile URI
+```
+curl example.com/remote/Dockerfile | docker build -f – .
+```
+- Removing an Image
+```
+docker image rm nginx
+```
+- Showing the History of an Image
+```
+docker image history
+```
+- Pushing an Image
+```
+docker image push eon01/nginx
+```
+### Container:
+A runnable instance of an image. Containers run applications and contain everything needed to run the application, including the code, runtime, libraries, and dependencies.
+
 ## Docker Login And Pushing Docker Images to a Docker Repository
 To push your image, first log into Docker Hub.
 ```
@@ -119,3 +146,8 @@ To push the ubuntu-nodejs image to the sammy repository, the command would be:
 ```
 docker push sammy/ubuntu-nodejs
 ```
+- Logout from a Registry
+```
+docker logout
+```
+
