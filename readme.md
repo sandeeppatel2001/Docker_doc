@@ -23,7 +23,7 @@ Docker simplifies application creation, deployment, and running through containe
   - [Image](#image)
   - [Container](#container)
   - [Dockerfile](#dockerfile)
-- [Installation Commands]()
+- [Installation Commands on Ubuntu](#installation-on-ubuntu)
 - [Docker Login Commands]()
 - [DOCKERFILE]()
 - [Image]()
@@ -63,9 +63,41 @@ A runnable instance of an image. Containers run applications and contain everyth
 ### Dockerfile: 
 A text document that contains instructions for building a Docker image. Dockerfiles define the environment inside a container, including the base image, dependencies, and runtime configuration.
 
-### [Installation]
+### [Installation on Ubuntu]
+First, update your existing list of packages:
 ```
 sudo apt update
 ```
+Next, install a few prerequisite packages which let apt use packages over HTTPS:
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
+Then add the GPG key for the official Docker repository to your system:
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+Add the Docker repository to APT sources:
+```
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+```
+This will also update our package database with the Docker packages from the newly added repo.
 
+Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
+```
+apt-cache policy docker-ce
+```
+You’ll see output like this, although the version number for Docker may be different:
+<img width="517" alt="Screenshot 2024-04-29 112312" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/16fae37a-db6a-4fdc-956a-0de0f66a0710">
+- Notice that docker-ce is not installed, but the candidate for installation is from the Docker repository for Ubuntu 20.04 (focal).
+- Finally, install Docker:
+```
+sudo apt install docker-ce
+```
+Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+```
+sudo systemctl status docker
+```
+The output should be similar to the following, showing that the service is active and running:
+
+<img width="503" alt="Screenshot 2024-04-29 112530" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/30f1a73c-bd15-4db9-a529-a635e13f0ba8">
 
