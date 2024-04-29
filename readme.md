@@ -101,3 +101,21 @@ The output should be similar to the following, showing that the service is activ
 
 <img width="503" alt="Screenshot 2024-04-29 112530" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/30f1a73c-bd15-4db9-a529-a635e13f0ba8">
 
+## Docker Login And Pushing Docker Images to a Docker Repository
+To push your image, first log into Docker Hub.
+```
+docker login -u docker-registry-username
+```
+You’ll be prompted to authenticate using your Docker Hub password. If you specified the correct password, authentication should succeed.
+- Note: If your Docker registry username is different from the local username you used to create the image, you will have to tag your image with your registry username. For the example given in the last step, you would type:
+```
+docker tag sammy/ubuntu-nodejs docker-registry-username/ubuntu-nodejs
+```
+Then you may push your own image using:
+```
+docker push docker-registry-username/docker-image-name
+```
+To push the ubuntu-nodejs image to the sammy repository, the command would be:
+```
+docker push sammy/ubuntu-nodejs
+```
