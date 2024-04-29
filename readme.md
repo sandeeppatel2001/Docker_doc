@@ -137,6 +137,10 @@ docker start <container_id>    # Start a stopped container
 docker restart <container_id>  # Restart a running container
 ```
 - Another way
+- Starting Containers
+```
+docker container start nginx
+```
 Stopping Containers
 ```
 docker container stop nginx
