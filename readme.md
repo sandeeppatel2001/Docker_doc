@@ -100,7 +100,7 @@ A read-only template used to create containers. Images are built from Dockerfile
 ```
 docker build -t my-node-app .
 ```
-This command builds a Docker image named my-node-app based on the instructions in the Dockerfile.
+- This command builds a Docker image named my-node-app based on the instructions in the Dockerfile.
 - Listing Images
 ```
   docker image ls
@@ -128,6 +128,67 @@ docker image push eon01/nginx
 ### Container:
 A runnable instance of an image. Containers run applications and contain everything needed to run the application, including the code, runtime, libraries, and dependencies.
 
+Once you have Docker images, you can create and manage containers based on these images.
+- Starting, Stopping, and Restarting Containers:
+```
+docker run <image_name>        # Start a container from an image
+docker stop <container_id>     # Stop a running container
+docker start <container_id>    # Start a stopped container
+docker restart <container_id>  # Restart a running container
+```
+- Another way
+Stopping Containers
+```
+docker container stop nginx
+```
+Restarting Containers
+```
+docker container restart nginx
+```
+Pausing Containers
+```
+docker container pause nginx
+```
+Unpausing Containers
+```
+docker container unpause nginx
+```
+Blocking a Container
+```
+docker container wait nginx
+```
+Sending SIGKILL Containers
+```
+docker container kill nginx
+```
+Check the Containers
+```
+docker ps
+```
+To see all running containers
+```
+docker container ls
+```
+Container Logs
+```
+docker logs infinite
+```
+‘tail -f’ Containers’ Logs
+```
+docker container logs infinite -f
+```
+Inspecting Containers
+```
+docker container inspect infinite
+```
+Container Resource Usage
+```
+docker container stats infinite
+```
+inspecting changes to files or directories on a container’s filesystem
+```
+docker container diff infinite
+```
 ## Docker Login And Pushing Docker Images to a Docker Repository
 To push your image, first log into Docker Hub.
 ```
