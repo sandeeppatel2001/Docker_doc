@@ -215,4 +215,9 @@ docker push sammy/ubuntu-nodejs
 ```
 docker logout
 ```
+- Logout from a Registry
+```
+docker logout
+```
+
 
