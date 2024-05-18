@@ -28,14 +28,7 @@ Docker simplifies application creation, deployment, and running through containe
     - [Image Transfer Commands]()
   - [Container](#container)
 - [Docker Login And Pushing Docker Images to a Docker Repository](#docker-login-and-pushing-docker-images-to-a-docker-repository)
-- [General Docker Commands]()
-- [CONTAINER MANAGEMENT:]()
-- [Docker Image Management Commands]()
-- [5. DOCKER NETWORKING:]()
-  - [Bridge:]()
-  - [Host:]()
-  - [Overlay:]()
-- [Docker Exposing Ports Commands]()
+- [Docker Exposing Ports Commands](#docker-exposing-ports-commands)
 - [6.DOCKER COMPOSE:]()
 - [Docker Swarm Commands]()
 - [Docker file Commands]()
@@ -219,5 +212,10 @@ docker logout
 ```
 docker logout
 ```
-
-
+---
+## Docker Exposing Ports Commands
+For Eposing the Port we can directly write EXPOSE [port number] in the Docker file
+or during running the container we can map the port
+```
+docker run -p $HOST_PORT:$CONTAINER_PORT –name [container_name] -t [imageName]
+```
