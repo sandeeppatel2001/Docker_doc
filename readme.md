@@ -291,11 +291,27 @@ docker service logs --follow [SERVICE_NAME | SERVICE_ID]
 ```
 sudo docker service ps [container id]
 ```
-Or can go inside docker container
+Going inside docker container
 ```
 sudo docker exec -it 3ff092d5d84b  bash
 ```
+
 ---
 ---
 
-
+## Run The Docker Compose File
+```
+sudo docker stack deploy -c docker-compose.yml swarmnodeapp
+```
+### Or Run In Debug Mood
+```
+sudo docker stack deploy -c docker-compose.yml  -e DEBUG="app:*"  swarmnodeapp
+```
+## For Runing the Kafka And ZooKeeper
+```
+sudo docker-compose --project-name kafkaandzookeeeper -f ./lib/dockerfile/kafka-compose.yml up
+```
+## For Stoping the Kafka And ZooKeeper
+```
+sudo docker-compose --project-name kafkaandzookeeeper -f ./lib/dockerfile/kafka-compose.yml stop
+```
