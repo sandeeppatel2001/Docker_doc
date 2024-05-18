@@ -29,14 +29,11 @@ Docker simplifies application creation, deployment, and running through containe
   - [Container](#container)
 - [Docker Login And Pushing Docker Images to a Docker Repository](#docker-login-and-pushing-docker-images-to-a-docker-repository)
 - [Docker Exposing Ports Commands](#docker-exposing-ports-commands)
-- [6.DOCKER COMPOSE:]()
-- [Docker Swarm Commands]()
-- [Docker file Commands]()
-- [Docker Volume Commands]()
-- [Docker CP commands]()
-- [Scaling Containers]()
+- [6.DOCKER COMPOSE:](#docker-compose)
+- [Docker Swarm Commands](#docker-swarm)
+- [Scaling Containers](#scaling-containers)
+- [Viewing Docker Logs:](#viewing-docker-logs)
 - [MONITORING AND LOGGING:]()
-- [Viewing Docker Logs:]()
 
 
 ----
@@ -251,4 +248,54 @@ Start your application:
 ```
 docker-compose up
 ```
+## Docker Swarm
+Docker Swarm is Docker's native clustering and orchestration tool. It allows you to manage a cluster of Docker nodes as a single virtual system. Docker Swarm turns a pool of Docker hosts into a single, virtual Docker host. This enables you to scale your applications horizontally by adding more nodes to the cluster and distributing containers across these nodes.
+
+```
+version: '3.8'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: example_db
+      POSTGRES_USER: example_user
+      POSTGRES_PASSWORD: example_password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+
+```
+## Scaling Containers
+replicas: Specifies the number of container instances to run for the service.
+### Deploy the stack:
+```
+docker stack deploy -c docker-compose.yml my_stack
+```
+## Viewing Docker Logs
+```
+docker service logs --follow [SERVICE_NAME | SERVICE_ID]
+```
+```
+sudo docker service ps [container id]
+```
+Or can go inside docker container
+```
+sudo docker exec -it 3ff092d5d84b  bash
+```
+---
+---
+
 
