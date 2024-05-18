@@ -219,3 +219,36 @@ or during running the container we can map the port
 ```
 docker run -p $HOST_PORT:$CONTAINER_PORT –name [container_name] -t [imageName]
 ```
+## Docker Compose
+Docker Compose allows you to define a multi-container application with all of its dependencies in a single file. This way, you can manage, configure, and start the whole stack with simple commands. It is particularly useful for microservices, where each service is in its own container.
+### Compose File Structure
+- To start using Docker Compose, you need to create a docker-compose.yml file that describes your services, networks, and volumes.
+```
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: example_db
+      POSTGRES_USER: example_user
+      POSTGRES_PASSWORD: example_password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+
+```
+Start your application:
+```
+docker-compose up
+```
+
