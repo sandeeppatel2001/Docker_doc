@@ -3,9 +3,8 @@ Docker simplifies application creation, deployment, and running through containe
 
 
 ### References.
-- gitlab.com
-- Books: "Docker Deep Dive" by Nigel Poulton, "The Docker Book" by James Turnbull
-- Online Courses: Docker Mastery on Udemy, Docker Deep Dive on Pluralsight
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+- https://www.geeksforgeeks.org/docker-cheat-sheet/
 
 
 ----
