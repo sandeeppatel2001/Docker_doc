@@ -97,11 +97,11 @@ This guide covers the setup of Prometheus and Grafana using Docker, along with s
 
 ### Node Exporter Setup
 
-Follow the instructions provided in the [Grafana documentation](https://grafana.com/docs/grafana-cloud/send-data/metrics/metrics-prometheus/prometheus-config-examples/noagent_linuxnode/) to set up `node_exporter` for monitoring Node.js servers.
+Follow the instructions provided in the [Grafana node_exporter documentation](https://grafana.com/docs/grafana-cloud/send-data/metrics/metrics-prometheus/prometheus-config-examples/noagent_linuxnode/) to set up `node_exporter` for monitoring Node.js servers.
 
 ### PostgreSQL Exporter Setup
 
-Follow the instructions provided in the [Grafana documentation](https://grafana.com/oss/prometheus/exporters/postgres-exporter/?tab=installation#step-1-setting-up-postgres-exporter) to set up `postgres_exporter` for monitoring PostgreSQL databases.
+Follow the instructions provided in the [Grafana postgres_exporter documentation](https://grafana.com/oss/prometheus/exporters/postgres-exporter/?tab=installation#step-1-setting-up-postgres-exporter) to set up `postgres_exporter` for monitoring PostgreSQL databases.
 
 ## Additional Steps
 
