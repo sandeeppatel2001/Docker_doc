@@ -48,7 +48,7 @@ sudo docker run -d -p 0.0.0.0:3000:3000 \
 - Prometheus: Open your browser and navigate to http://localhost:9090 to access the Prometheus web UI.
 - Grafana: Open your browser and navigate to http://localhost:3000 to access the Grafana web UI. The default login credentials are admin for both the username and password (By default username=admin, password=admin).
 ---
-# Prometheus and Grafana Setup Guide
+# node_exporter and postgres_exporter Setup Guide
 
 ## Overview
 
