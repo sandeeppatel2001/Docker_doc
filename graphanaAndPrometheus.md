@@ -98,6 +98,14 @@ Follow the instructions provided in the [Grafana Redis_exporter documentation](h
 For this we need to set-up Kafka exporter in docker-compose.yml file
 
 ```
+version: '2'
+kafka:
+    image: 'bitnami/kafka:latest'
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    networks:
+      - app-tier
 kafka-exporter:
     build: kafka-exporter
     ports:
