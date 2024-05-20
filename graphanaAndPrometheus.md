@@ -90,6 +90,10 @@ Follow the instructions provided in the [Grafana node_exporter documentation](ht
 
 Follow the instructions provided in the [Grafana postgres_exporter documentation](https://grafana.com/oss/prometheus/exporters/postgres-exporter/?tab=installation#step-1-setting-up-postgres-exporter) to set up `postgres_exporter` for monitoring PostgreSQL databases.
 
+### Redis Exporter Setup
+
+Follow the instructions provided in the [Grafana Redis_exporter documentation](https://grafana.com/oss/prometheus/exporters/redis-exporter/?tab=installation) to set up `Redis_exporter` for monitoring Redis databases.
+
 ### Kafka Exporter Setup
 For this we need to set-up Kafka exporter in docker-compose.yml file
 
