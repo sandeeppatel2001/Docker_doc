@@ -36,6 +36,8 @@ prom/prometheus:v2.20.1
 <img width="960" alt="Screenshot 2024-05-19 192516" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/24614fd2-d1a0-4005-8c72-32a70e456e0f">
 
 # Running Grafana with Docker
+- Best Reference: https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/
+## Run Grafana via Docker CLI
 Use the following command to run Grafana in a Docker container:
 ```
 sudo docker run -d -p 0.0.0.0:3000:3000 \
@@ -49,10 +51,22 @@ sudo docker run -d -p 0.0.0.0:3000:3000 \
 - --net=host: Use the host network.
 ## Output Of The Command 
 <img width="668" alt="Screenshot 2024-05-19 192236" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/06d9aafe-4065-4108-8e8f-1c968431ca21">
+## Run Grafana via Docker Compose
+```
+version: '3.8'  # Specifies the version of the Docker Compose file format
 
+services:  # Defines the services that make up the application
+  grafana:  # The Grafana service
+    image: grafana/grafana:latest  # Uses the latest version of the Grafana image from Docker Hub
+    ports:  # Maps ports on the host to ports in the container
+      - "3000:3000"  # Maps port 3000 on the host to port 3000 in the container, making the Grafana web interface accessible on port 3000
+    environment:  # Sets environment variables inside the container
+      GF_SECURITY_ADMIN_USER: admin  # Sets the Grafana admin username to 'admin'
+      GF_SECURITY_ADMIN_PASSWORD: admin_password  # Sets the Grafana admin password to 'admin_password'
+```
 ## Accessing the Applications
 - Prometheus: Open your browser and navigate to `http://<your_server_ip>:9090` to access the Prometheus web UI.
-- Grafana: Open your browser and navigate to `http://<your_server_ip>:3000` to access the Grafana web UI. The default login credentials are admin for both the username and password (By default username=admin, password=admin).
+- Grafana: Open your browser and navigate to `http://<your_server_ip>:3000` to access the Grafana web UI. The default login credentials are admin for both the username and password (By default username=admin, password=admin) Or If you are running through docker-compose then you can set your username or password as we have done it in uper docker compose file.
 ### Prometheus on `http://<your_server_ip>:9090`
 <img width="951" alt="Screenshot 2024-05-19 192441" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/65ae8d08-5a45-485e-8374-bacba8b87332">
 
