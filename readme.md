@@ -210,7 +210,8 @@ docker-compose up
 ```
 ## Docker Swarm
 Docker Swarm is Docker's native clustering and orchestration tool. It allows you to manage a cluster of Docker nodes as a single virtual system. Docker Swarm turns a pool of Docker hosts into a single, virtual Docker host. This enables you to scale your applications horizontally by adding more nodes to the cluster and distributing containers across these nodes.
-
+## Scaling Containers
+replicas: Specifies the number of container instances to run for the service.
 ```
 version: '3.8'
 services:
@@ -238,8 +239,6 @@ volumes:
   db_data:
 
 ```
-## Scaling Containers
-replicas: Specifies the number of container instances to run for the service.
 ### Deploy the stack:
 ```
 docker stack deploy -c docker-compose.yml my_stack
