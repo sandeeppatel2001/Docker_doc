@@ -213,30 +213,33 @@ Docker Swarm is Docker's native clustering and orchestration tool. It allows you
 ## Scaling Containers
 replicas: Specifies the number of container instances to run for the service.
 ```
-version: '3.8'
-services:
-  web:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    deploy:
-      replicas: 3
-      update_config:
-        parallelism: 2
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-  database:
-    image: postgres:latest
-    environment:
-      POSTGRES_DB: example_db
-      POSTGRES_USER: example_user
-      POSTGRES_PASSWORD: example_password
-    volumes:
-      - db_data:/var/lib/postgresql/data
+version: '3.8'  # Specifies the version of the Docker Compose file format
 
-volumes:
-  db_data:
+services:  # Defines the services that make up the application
+  web:  # The web service
+    image: nginx:latest  # Uses the latest version of the Nginx image from Docker Hub
+    ports:  # Maps ports on the host to ports in the container
+      - "80:80"  # Maps port 80 on the host to port 80 in the container, making the web server accessible via HTTP on port 80
+    deploy:  # Deployment configuration for Docker Swarm
+      replicas: 3  # Specifies the number of container instances to run (3 replicas)
+      update_config:  # Configuration for updating the service
+        parallelism: 2  # Specifies how many containers to update at a time (2 in parallel)
+        delay: 10s  # Specifies the delay between updates of a group of containers (10 seconds)
+      restart_policy:  # Restart policy for the service
+        condition: on-failure  # Specifies that the containers should only be restarted if they fail
+
+  database:  # The database service
+    image: postgres:latest  # Uses the latest version of the PostgreSQL image from Docker Hub
+    environment:  # Sets environment variables inside the container
+      POSTGRES_DB: example_db  # Creates a database named example_db
+      POSTGRES_USER: example_user  # Sets the PostgreSQL user to example_user
+      POSTGRES_PASSWORD: example_password  # Sets the password for the PostgreSQL user
+    volumes:  # Mounts host machine directories or named volumes into the container
+      - db_data:/var/lib/postgresql/data  # Mounts the named volume db_data to /var/lib/postgresql/data in the container, which is the directory where PostgreSQL stores data
+
+volumes:  # Defines named volumes that can be shared among services or used to persist data
+  db_data:  # A named volume that stores PostgreSQL data, ensuring data persistence across container restarts
+
 
 ```
 ### Deploy the stack:
