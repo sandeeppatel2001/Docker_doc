@@ -51,12 +51,12 @@ sudo docker run -d -p 0.0.0.0:3000:3000 \
 <img width="668" alt="Screenshot 2024-05-19 192236" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/06d9aafe-4065-4108-8e8f-1c968431ca21">
 
 ## Accessing the Applications
-- Prometheus: Open your browser and navigate to http://localhost:9090 to access the Prometheus web UI.
-- Grafana: Open your browser and navigate to http://localhost:3000 to access the Grafana web UI. The default login credentials are admin for both the username and password (By default username=admin, password=admin).
-### Prometheus on http://localhost:9090
+- Prometheus: Open your browser and navigate to `http://<your_server_ip>:9090` to access the Prometheus web UI.
+- Grafana: Open your browser and navigate to `http://<your_server_ip>:3000` to access the Grafana web UI. The default login credentials are admin for both the username and password (By default username=admin, password=admin).
+### Prometheus on `http://<your_server_ip>:9090`
 <img width="951" alt="Screenshot 2024-05-19 192441" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/65ae8d08-5a45-485e-8374-bacba8b87332">
 
-### Grafana on http://localhost:3000
+### Grafana on `http://<your_server_ip>:3000`
 
 <img width="952" alt="Screenshot 2024-05-19 192002" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/0f7cd845-e562-4c27-bb60-1039859a822d">
 
