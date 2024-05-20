@@ -11,7 +11,7 @@ Docker simplifies application creation, deployment, and running through containe
 
 ## Version History.
 
-- Version: 1.0, Author: Sandeep Patel, Last Updated: April 29th, 2024, Created: April 17th, 2024.
+- Version: 1.0, Author: Sandeep Patel, Last Updated: May 20th, 2024, Created: April 17th, 2024.
 
 -------
 
@@ -181,27 +181,27 @@ Docker Compose allows you to define a multi-container application with all of it
 ### Compose File Structure
 - To start using Docker Compose, you need to create a docker-compose.yml file that describes your services, networks, and volumes.
 ```
-version: '3.8'
+version: '3.8'  # Specifies the version of the Docker Compose file format
 
-services:
-  web:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./html:/usr/share/nginx/html
+services:  # Defines the services that make up the application. Each service runs a container.
+  web:  # The name of the service. This can be used to refer to the service in other parts of the configuration.
+    image: nginx:latest  # Uses the latest version of the Nginx image from Docker Hub
+    ports:  # Maps ports on the host to ports in the container
+      - "80:80"  # Maps port 80 on the host to port 80 in the container, making the web server accessible via HTTP on port 80
+    volumes:  # Mounts host machine directories or files into the container
+      - ./html:/usr/share/nginx/html  # Mounts the local ./html directory to /usr/share/nginx/html in the container, where Nginx serves static files
 
-  database:
-    image: postgres:latest
-    environment:
-      POSTGRES_DB: example_db
-      POSTGRES_USER: example_user
-      POSTGRES_PASSWORD: example_password
-    volumes:
-      - db_data:/var/lib/postgresql/data
+  database:  # The database service
+    image: postgres:latest  # Uses the latest version of the PostgreSQL image from Docker Hub
+    environment:  # Sets environment variables inside the container
+      POSTGRES_DB: example_db  # Creates a database named example_db
+      POSTGRES_USER: example_user  # Sets the PostgreSQL user to example_user
+      POSTGRES_PASSWORD: example_password  # Sets the password for the PostgreSQL user
+    volumes:  # Mounts host machine directories or named volumes into the container
+      - db_data:/var/lib/postgresql/data  # Mounts the named volume db_data to /var/lib/postgresql/data in the container, which is the directory where PostgreSQL stores data
 
-volumes:
-  db_data:
+volumes:  # Defines named volumes that can be shared among services or used to persist data
+  db_data:  # A named volume that stores PostgreSQL data, ensuring data persistence across container restarts
 
 ```
 Start your application:
