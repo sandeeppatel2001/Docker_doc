@@ -2,6 +2,19 @@
 
 This guide will walk you through creating a custom Dockerfile, building a Docker image from it, and running a container from the built image.
 
+### References.
+https://medium.com/@komalminhas.96/a-step-by-step-guide-to-build-and-push-your-own-docker-images-to-dockerhub-709963d4a8bc
+
+
+----
+
+## Version History.
+
+- Version: 1.0, Author: Sandeep Patel, Last Updated: May 21th, 2024, Created: May 21th, 2024.
+
+-------
+
+
 ## Prerequisites
 
 - Docker installed on your machine. You can download and install Docker from [here](https://www.docker.com/products/docker-desktop).
