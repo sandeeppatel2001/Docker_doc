@@ -51,6 +51,7 @@ sudo docker run -d -p 0.0.0.0:3000:3000 \
 - --net=host: Use the host network.
 ## Output Of The Command 
 <img width="668" alt="Screenshot 2024-05-19 192236" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/06d9aafe-4065-4108-8e8f-1c968431ca21">
+
 ## Run Grafana via Docker Compose
 
 ```
@@ -89,6 +90,22 @@ Follow the instructions provided in the [Grafana node_exporter documentation](ht
 
 Follow the instructions provided in the [Grafana postgres_exporter documentation](https://grafana.com/oss/prometheus/exporters/postgres-exporter/?tab=installation#step-1-setting-up-postgres-exporter) to set up `postgres_exporter` for monitoring PostgreSQL databases.
 
+### Kafka Exporter Setup
+For this we need to set-up Kafka exporter in docker-compose.yml file
+
+```
+kafka-exporter:
+    build: kafka-exporter
+    ports:
+      - "9308:9308"
+    networks:
+      - app-tier
+    entrypoint: ["run.sh"]
+networks:
+  app-tier:
+    driver: bridge
+```
+See This For More Information Regarding Kafka Exporter: https://stackoverflow.com/a/70599882
 ## Additional Steps
 
 1. **Access Grafana**:
