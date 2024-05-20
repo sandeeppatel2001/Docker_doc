@@ -52,9 +52,9 @@ sudo docker run -d -p 0.0.0.0:3000:3000 \
 ## Output Of The Command 
 <img width="668" alt="Screenshot 2024-05-19 192236" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/06d9aafe-4065-4108-8e8f-1c968431ca21">
 ## Run Grafana via Docker Compose
+
 ```
 version: '3.8'  # Specifies the version of the Docker Compose file format
-
 services:  # Defines the services that make up the application
   grafana:  # The Grafana service
     image: grafana/grafana:latest  # Uses the latest version of the Grafana image from Docker Hub
