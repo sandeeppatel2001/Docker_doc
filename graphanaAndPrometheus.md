@@ -1,6 +1,21 @@
 # Prometheus and Grafana Setup Guide
 Prometheus is a powerful monitoring and alerting tool designed for reliability and scalability. It collects and stores its data as time series, providing metrics data in a matrix format. Grafana, on the other hand, is a multi-platform open-source analytics and interactive visualization web application, which allows you to query, visualize, alert on, and understand your metrics.
 - Below are the steps to set up Prometheus and Grafana using Docker.
+
+
+### References.
+https://squaredup.com/blog/instrument-node-with-prometheus/
+https://stackabuse.com/nodejs-application-monitoring-with-prometheus-and-grafana/
+https://codersociety.com/blog/articles/nodejs-application-monitoring-with-prometheus-and-grafana
+
+
+----
+
+## Version History.
+
+- Version: 1.0, Author: Sandeep Patel, Last Updated: May 21th, 2024, Created: May 21th, 2024.
+
+-------
 ## 1. Prometheus Configuration
 Create a prometheus.yml configuration file with the following content:
 ```
