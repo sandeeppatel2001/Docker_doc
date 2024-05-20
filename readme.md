@@ -125,62 +125,23 @@ docker stop <container_id>     # Stop a running container
 docker start <container_id>    # Start a stopped container
 docker restart <container_id>  # Restart a running container
 ```
-- Another way
-- Starting Containers
+- Another way (let image have to run = nginx)
+
 ```
-docker container start nginx
-```
-Stopping Containers
-```
-docker container stop nginx
-```
-Restarting Containers
-```
-docker container restart nginx
-```
-Pausing Containers
-```
-docker container pause nginx
-```
-Unpausing Containers
-```
-docker container unpause nginx
-```
-Blocking a Container
-```
-docker container wait nginx
-```
-Sending SIGKILL Containers
-```
-docker container kill nginx
-```
-Check the Containers
-```
-docker ps
-```
-To see all running containers
-```
-docker container ls
-```
-Container Logs
-```
-docker logs infinite
-```
-‘tail -f’ Containers’ Logs
-```
-docker container logs infinite -f
-```
-Inspecting Containers
-```
-docker container inspect infinite
-```
-Container Resource Usage
-```
-docker container stats infinite
-```
-inspecting changes to files or directories on a container’s filesystem
-```
-docker container diff infinite
+docker container start nginx    #Starting Containers
+docker container stop nginx    #Stopping Containers 
+docker container restart nginx  #Restarting Containers
+docker container pause nginx     #Pausing Containers
+docker container unpause nginx     #Unpausing Containers
+docker container wait nginx       #Blocking a Container
+docker container kill nginx      #Sending SIGKILL Containers
+docker ps                    #Check the Containers
+docker container ls          #To see all running containers
+docker logs infinite         #Container Logs
+docker container logs infinite -f   #‘tail -f’ Containers’ Logs
+docker container inspect infinite   #Inspecting Containers
+docker container stats infinite   #Container Resource Usage
+docker container diff infinite   #inspecting changes to files or directories on a container’s filesystem
 ```
 ## Docker Login And Pushing Docker Images to a Docker Repository
 To push your image, first log into Docker Hub.
