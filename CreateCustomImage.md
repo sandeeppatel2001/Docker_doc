@@ -10,14 +10,7 @@ This guide will walk you through creating a custom Dockerfile, building a Docker
 
 A Dockerfile is a text document that contains all the commands to assemble an image. Here's an example of a simple Dockerfile for a Node.js application.
 
-1. Create a directory for your project and navigate into it:
-
-    ```sh
-    mkdir my-node-app
-    cd my-node-app
-    ```
-
-2. Create a file named `Dockerfile` (without any extension) and open it in a text editor:
+Create a file named `Dockerfile` (without any extension) and open it in a text editor:
 
     ```Dockerfile
     # Use an official Node.js runtime as a parent image
@@ -35,14 +28,14 @@ A Dockerfile is a text document that contains all the commands to assemble an im
     # Copy the rest of the application code to the working directory
     COPY . .
 
-    # Expose port 8080 to the outside world
-    EXPOSE 8080
+    # Expose port 4000 to the outside world
+    EXPOSE 4000
 
     # Define the command to run the application
     CMD ["node", "app.js"]
     ```
 
-3. Create a simple `package.json` file for a Node.js application:
+Create a simple `package.json` file for a Node.js application:
 
     ```json
     {
@@ -59,12 +52,12 @@ A Dockerfile is a text document that contains all the commands to assemble an im
     }
     ```
 
-4. Create a simple `app.js` file:
+Create a simple `app.js` file:
 
     ```javascript
     const express = require('express');
     const app = express();
-    const port = 8080;
+    const port = 4000;
 
     app.get('/', (req, res) => {
       res.send('Hello World!');
@@ -81,3 +74,16 @@ To build the Docker image from the Dockerfile, run the following command in the 
 
 ```sh
 docker build -t my-node-app .
+```
+## Step 3: Run the Docker Image
+After building the image, you can run a container from it using the following command:
+```
+docker run -p 4000:4000 my-node-app
+```
+## Additional Commands
+```
+docker images                #To list all Docker images on your machine
+docker ps                    #To list all running containers
+docker stop <container_id>  #To stop a running container
+docker rmi my-node-app      #To remove a Docker image
+```
