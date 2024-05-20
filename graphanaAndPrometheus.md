@@ -76,7 +76,7 @@ services:  # Defines the services that make up the application
 <img width="952" alt="Screenshot 2024-05-19 192002" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/0f7cd845-e562-4c27-bb60-1039859a822d">
 
 ---
-# node_exporter and postgres_exporter Setup Guide
+# node_exporter, postgres_exporter, Redis_exporter and Kafka_exporter Setup Guide
 
 
 
