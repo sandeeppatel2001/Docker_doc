@@ -30,10 +30,12 @@ Docker simplifies application creation, deployment, and running through containe
 - [Docker Exposing Ports Commands](#docker-exposing-ports-commands)
 - [DOCKER COMPOSE:](#docker-compose)
 - [Key Differences Between Docker File and Docker-Compose File](#Key-Differences-Between-Docker-File-and-Docker-Compose-File)
+- [Methods for Creating Volumes in Docker](#Methods-for-Creating-Volumes-in-Docker)
 - [Docker Swarm Commands](#docker-swarm)
 - [Scaling Containers](#scaling-containers)
+- [Methods For Providing ENV to docker container](#Methods-For-Providing-ENV-to-docker-container)
 - [Viewing Docker Logs:](#viewing-docker-logs)
-- [MONITORING AND LOGGING:]()
+
 
 
 ----
