@@ -26,12 +26,12 @@ scrape_configs:
   - job_name: "restapi"
     static_configs:
       - targets:
-          - "10.9.0.14:8900"
+          - "<your_server_ip>:8900"
         labels:
           instance: "server"
 
       - targets:
-          - "10.9.0.15:9100"
+          - "<your_server_ip>:9100"
         labels:
           instance: "database_pgsql"
 ```
