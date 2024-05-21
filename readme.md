@@ -268,7 +268,6 @@ docker stack deploy -c docker-compose.yml my_stack
 - Persistence: Persistent across all containers started from the image.
 Example:
 ```
-Copy code
 ENV NODE_ENV=production
 ```
 ### Passing Environment Variables at Runtime:
