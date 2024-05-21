@@ -262,7 +262,32 @@ volumes:  # Defines named volumes that can be shared among services or used to p
 ```
 docker stack deploy -c docker-compose.yml my_stack
 ```
+## Methods For Providing ENV to docker container
+### Using ENV in Dockerfile:
+- Scope: Part of the image.
+- Persistence: Persistent across all containers started from the image.
+Example:
+```
+Copy code
+ENV NODE_ENV=production
+```
+### Passing Environment Variables at Runtime:
+
+- Scope: Specific to the container instance.
+- Persistence: Only for the lifetime of the container.
+Examples:
+Using ENV in docker run:
+```
+docker run -e NODE_ENV=production -e API_KEY=your_api_key your_image_name
+```
+Using docker-compose.yml:
+```
+environment:
+  - NODE_ENV=production
+  - API_KEY=your_api_key
+```
 ## Viewing Docker Logs
+
 ```
 docker service logs --follow [SERVICE_NAME | SERVICE_ID]
 ```
