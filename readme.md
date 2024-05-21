@@ -224,6 +224,40 @@ docker-compose up
 ### Usage Scenarios:
 - Dockerfile: Ideal for creating a custom image for a single service.
 - Docker Compose file: Ideal for running and managing applications composed of multiple services.
+## Methods for Creating Volumes in Docker
+### Using docker volume create Command:
+Command: 
+```
+docker volume create my_volume
+```
+- Usage: docker run -v my_volume:/app/data my_image
+### Specifying Volumes in docker-compose.yml:
+
+File Example
+```
+volumes:
+  my_volume:
+  db_data:
+```
+- Usage: docker-compose up
+- We Can Assign This volume To Different Service
+### Creating Anonymous Volumes:
+
+Command: 
+```
+docker run -v /app/data my_image
+```
+### Bind Mounts:
+Command: 
+```
+docker run -v /host/path:/container/path my_image
+```
+### Using --mount Flag:
+
+Command:
+```
+docker run --mount type=volume,source=my_volume,target=/app/data my_image
+```
 ## Docker Swarm
 Docker Swarm is Docker's native clustering and orchestration tool. It allows you to manage a cluster of Docker nodes as a single virtual system. Docker Swarm turns a pool of Docker hosts into a single, virtual Docker host. This enables you to scale your applications horizontally by adding more nodes to the cluster and distributing containers across these nodes.
 ## Scaling Containers
