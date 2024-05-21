@@ -208,6 +208,22 @@ Start your application:
 ```
 docker-compose up
 ```
+## Key Differences Between Docker File and Docker-Compose File
+### Scope:
+- Dockerfile: Defines how to build a single Docker image.
+- Docker Compose file: Defines how to run and configure multiple Docker containers.
+### File Type:
+- Dockerfile: Typically named Dockerfile.
+- Docker Compose file: Typically named docker-compose.yml.
+### Commands:
+- Dockerfile: Used with docker build.
+- Docker Compose file: Used with docker-compose up, docker-compose down, etc.
+### Configuration:
+- Dockerfile: Specifies instructions for building an image.
+- Docker Compose file: Specifies services, networks, volumes, and configurations for running containers.
+### Usage Scenarios:
+- Dockerfile: Ideal for creating a custom image for a single service.
+- Docker Compose file: Ideal for running and managing applications composed of multiple services.
 ## Docker Swarm
 Docker Swarm is Docker's native clustering and orchestration tool. It allows you to manage a cluster of Docker nodes as a single virtual system. Docker Swarm turns a pool of Docker hosts into a single, virtual Docker host. This enables you to scale your applications horizontally by adding more nodes to the cluster and distributing containers across these nodes.
 ## Scaling Containers
