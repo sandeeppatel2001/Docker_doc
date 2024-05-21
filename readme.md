@@ -346,11 +346,43 @@ sudo docker stack deploy -c docker-compose.yml swarmnodeapp
 ```
 sudo docker stack deploy -c docker-compose.yml  -e DEBUG="app:*"  swarmnodeapp
 ```
-## For Runing the Kafka And ZooKeeper
+## Kafka And ZooKeeper
+Image:
 ```
-sudo docker-compose --project-name kafkaandzookeeeper -f ./lib/dockerfile/kafka-compose.yml up
+version: ‘3.7'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 2181:2181
+    
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 ```
-## For Stoping the Kafka And ZooKeeper
+### Start Kafka Server
+Go where docker file exist and run:
 ```
-sudo docker-compose --project-name kafkaandzookeeeper -f ./lib/dockerfile/kafka-compose.yml stop
+docker-compose up -d
+```
+output:
+```
+Creating network "kafka_default" with the default driver
+Creating kafka_zookeeper ... done
+Creating kafka_kafka     ... done
 ```
