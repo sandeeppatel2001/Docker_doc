@@ -228,23 +228,53 @@ docker-compose up
 ### Usage Scenarios:
 - Dockerfile: Ideal for creating a custom image for a single service.
 - Docker Compose file: Ideal for running and managing applications composed of multiple services.
+
 ## Methods for Creating Volumes in Docker
-### Using docker volume create Command:
+Volumes in docker are the preferred way to deploy a stateful set application in the form of containers. You can manage and persist the docker data outside of the docker life cycle. Docker allows you to mount shared volumes in multiple Containers.
+### Display all the existing Docker Volumes
+```
+sudo docker volume ls
+```
+output:
+
+### To create a new Docker Volume, you can use the Volume Create Command.
 Command: 
 ```
-docker volume create my_volume
+docker volume create sandeepvolume
 ```
-- Usage: docker run -v my_volume:/app/data my_image
+output:
+
+### Inspecting Docker Volumes
+```
+sudo docker volume inspect sandeepvolume
+```
+![Uploading Screenshot 2024-05-22 150440.png…]()
+
+After creating the Volume, the next step is to mount the Volume to Docker Containers. We will create a Docker Container with the Ubuntu base Image which you will mention in Dockerfile and mount the sandeepvolume Volume to that Container using the -v flag.
+Command:
+```
+docker run -v sandeepvolume:/app/data my_imagename
+```
+The above command mounts the sandeepvolume volume to a directory called app/data inside the Docker Container named my-imagename.
 ### Specifying Volumes in docker-compose.yml:
 
 File Example
 ```
+services:
+  frontend:
+    image: node:lts
+    volumes:
+      - mongovol:/data/db
+backend:
+    image: node:lts
+    volumes:
+      - db_data:/data/db
 volumes:
   my_volume:
   db_data:
+  mongovol:
 ```
-- Usage: docker-compose up
-- We Can Assign This volume To Different Service
+- We Can Assign This volume To Different Service like here we are assigning mongovol to frontend service and db_data volume to backend volume.
 ### Creating Anonymous Volumes:
 
 Command: 
