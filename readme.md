@@ -236,6 +236,7 @@ Volumes in docker are the preferred way to deploy a stateful set application in 
 sudo docker volume ls
 ```
 output:
+<img width="541" alt="Screenshot 2024-05-22 150155" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/0eb015a1-c76b-416d-a387-7f72cc4a1b5e">
 
 ### To create a new Docker Volume, you can use the Volume Create Command.
 Command: 
@@ -243,12 +244,13 @@ Command:
 docker volume create sandeepvolume
 ```
 output:
+<img width="502" alt="Screenshot 2024-05-22 150303" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/be43a244-5f32-4fcc-ae27-4681703457ce">
 
 ### Inspecting Docker Volumes
 ```
 sudo docker volume inspect sandeepvolume
 ```
-![Uploading Screenshot 2024-05-22 150440.png…]()
+<img width="611" alt="Screenshot 2024-05-22 150440" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/26907653-f7dd-4898-a884-0316699cca3f">
 
 After creating the Volume, the next step is to mount the Volume to Docker Containers. We will create a Docker Container with the Ubuntu base Image which you will mention in Dockerfile and mount the sandeepvolume Volume to that Container using the -v flag.
 Command:
@@ -281,17 +283,7 @@ Command:
 ```
 docker run -v /app/data my_image
 ```
-### Bind Mounts:
-Command: 
-```
-docker run -v /host/path:/container/path my_image
-```
-### Using --mount Flag:
 
-Command:
-```
-docker run --mount type=volume,source=my_volume,target=/app/data my_image
-```
 ## Docker Swarm
 Docker Swarm is Docker's native clustering and orchestration tool. It allows you to manage a cluster of Docker nodes as a single virtual system. Docker Swarm turns a pool of Docker hosts into a single, virtual Docker host. This enables you to scale your applications horizontally by adding more nodes to the cluster and distributing containers across these nodes.
 ## Scaling Containers
