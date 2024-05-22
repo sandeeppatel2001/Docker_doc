@@ -277,7 +277,7 @@ volumes:
   db_data:
   mongovol:
 ```
-- We Can Assign This volume To Different Service like here we are assigning mongovol to frontend service and db_data volume to backend volume.
+- We Can Assign This volume To Different Service like here we are assigning mongovol to frontend service and db_data volume to backend service.
 ### Creating Anonymous Volumes:
 
 Command: 
