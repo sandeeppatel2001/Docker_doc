@@ -235,7 +235,7 @@ Volumes in docker are the preferred way to deploy a stateful set application in 
 ```
 sudo docker volume ls
 ```
-output:
+#### output:
 <img width="541" alt="Screenshot 2024-05-22 150155" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/0eb015a1-c76b-416d-a387-7f72cc4a1b5e">
 
 ### To create a new Docker Volume, you can use the Volume Create Command.
@@ -243,13 +243,14 @@ Command:
 ```
 docker volume create sandeepvolume
 ```
-output:
+#### output:
 <img width="502" alt="Screenshot 2024-05-22 150303" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/be43a244-5f32-4fcc-ae27-4681703457ce">
 
 ### Inspecting Docker Volumes
 ```
 sudo docker volume inspect sandeepvolume
 ```
+#### output:
 <img width="611" alt="Screenshot 2024-05-22 150440" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/26907653-f7dd-4898-a884-0316699cca3f">
 
 After creating the Volume, the next step is to mount the Volume to Docker Containers. We will create a Docker Container with the Ubuntu base Image which you will mention in Dockerfile and mount the sandeepvolume Volume to that Container using the -v flag.
