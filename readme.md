@@ -147,6 +147,12 @@ docker container inspect infinite   #Inspecting Containers
 docker container stats infinite   #Container Resource Usage
 docker container diff infinite   #inspecting changes to files or directories on a container’s filesystem
 ```
+## List container in different way
+```
+sudo docker ps     #  Lists only all the running containers.
+sudo docker ps -a  #  Lists all containers, including those that are stopped.
+sudo docker ps -l  #  Lists the most recently created container, including stopped containers.
+```
 ## Docker Login And Pushing Docker Images to a Docker Repository
 To push your image, first log into Docker Hub.
 ```
