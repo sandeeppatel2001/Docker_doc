@@ -353,17 +353,26 @@ environment:
   - API_KEY=your_api_key
 ```
 ## Viewing Docker Logs
-
+For viewing the logs
+```
+sudo docker logs [container name/id]
+```
+For viewing live container logs
 ```
 docker service logs --follow [SERVICE_NAME | SERVICE_ID]
 ```
 ```
 sudo docker service ps [container id]
 ```
-Going inside docker container
+For runing your own command Go inside docker container using this command
 ```
 sudo docker exec -it 3ff092d5d84b  bash
 ```
+For comming out from container write
+```
+exit
+```
+Then press Enter Button
 
 ---
 ---
