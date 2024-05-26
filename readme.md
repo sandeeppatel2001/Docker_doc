@@ -141,11 +141,11 @@ docker container wait nginx       #Blocking a Container
 docker container kill nginx      #Sending SIGKILL Containers
 docker ps                    #Check the Containers
 docker container ls          #To see all running containers
-docker logs infinite         #Container Logs
-docker container logs infinite -f   #‘tail -f’ Containers’ Logs
-docker container inspect infinite   #Inspecting Containers
-docker container stats infinite   #Container Resource Usage
-docker container diff infinite   #inspecting changes to files or directories on a container’s filesystem
+docker logs nginx         #Container Logs
+docker container logs nginx -f   #‘tail -f’ Containers’ Logs
+docker container inspect nginx   #Inspecting Containers
+docker container stats nginx   #Container Resource Usage
+docker container diff nginx   #inspecting changes to files or directories on a container’s filesystem
 ```
 ## List container in different way
 ```
