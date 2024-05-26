@@ -129,7 +129,7 @@ docker stop <container_id>     # Stop a running container
 docker start <container_id>    # Start a stopped container
 docker restart <container_id>  # Restart a running container
 ```
-- Another way (let image have to run = nginx)
+- Another way (let container name/id = nginx)
 
 ```
 docker container start nginx    #Starting Containers
