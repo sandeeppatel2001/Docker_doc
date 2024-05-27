@@ -113,26 +113,63 @@ Follow the instructions provided in the [Grafana Redis_exporter documentation](h
 For this we need to set-up Kafka exporter in docker-compose.yml file
 
 ```
-version: '2'
-kafka:
-    image: 'bitnami/kafka:latest'
-    environment:
-      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
-      - ALLOW_PLAINTEXT_LISTENER=yes
-    networks:
-      - app-tier
-kafka-exporter:
-    build: kafka-exporter
-    ports:
-      - "9308:9308"
-    networks:
-      - app-tier
-    entrypoint: ["run.sh"]
+version: '3'
+
 networks:
-  app-tier:
-    driver: bridge
+  kafka-net:
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 2181:2181
+    networks:
+      - kafka-net
+      
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - kafka-net
+
+  kafka-exporter:
+    image: danielqsj/kafka-exporter:latest
+    environment:
+      KAFKA_SERVER: kafka:29092
+    ports:
+      - 9308:9308
+    depends_on:
+      - kafka
+    networks:
+      - kafka-net
+
+# EXPOSE : 9092
+# EXPOSE : 29092
 ```
 See This For More Information Regarding Kafka Exporter: https://stackoverflow.com/a/70599882
+Run this docker-compose file and see the result:
+<img width="568" alt="3-container running" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/f10926d5-ff60-4a02-b83a-e2627e7e1e7c">
+
+Go to `http://<your_server_ip>:9308` where you will able to see the kafka exporter like this:
+<img width="640" alt="Screenshot 2024-05-27 010938" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/65d272aa-4238-41c7-a7d7-32b482828ce9">
+
+And if you click on Metrix then you will able to see the Matrix output like this:
+<img width="698" alt="Screenshot 2024-05-27 011010" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/096b31bb-f341-4d3f-acbc-8fb7c77097ca">
+
 ## Additional Steps
 
 1. **Access Grafana**:
