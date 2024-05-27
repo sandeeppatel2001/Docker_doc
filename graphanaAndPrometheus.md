@@ -228,7 +228,16 @@ See This For More Information Regarding Kafka Exporter: https://stackoverflow.co
 
 <img width="506" alt="kafkaExpo" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/596ecafe-616f-421c-974d-0a09dac87cbc">
 
-## Additional Steps
+## Summary
+
+- **Prometheus Configuration File (`prometheus.yml`)**: Defines the targets from which Prometheus will scrape metrics.
+- **Prometheus Docker Command**: Runs the Prometheus container with the specified configuration file.
+- **Grafana Docker Command**: Runs the Grafana container, storing its data in a persistent volume.
+- **Node Exporter**: Monitors Node.js servers.
+- **PostgreSQL Exporter**: Monitors PostgreSQL databases.
+
+Ensure that the IP addresses and ports in the Prometheus configuration match the endpoints from which you want to scrape metrics. The Grafana interface will be accessible at `http://<your_server_ip>:3000`.
+## Steps
 
 1. **Access Grafana**:
    - Open a browser and navigate to `http://<your_server_ip>:3000`.
@@ -241,12 +250,3 @@ See This For More Information Regarding Kafka Exporter: https://stackoverflow.co
 3. **Create Dashboards**:
    - Use Grafana to create dashboards and panels to visualize the data scraped by Prometheus.
 
-## Summary
-
-- **Prometheus Configuration File (`prometheus.yml`)**: Defines the targets from which Prometheus will scrape metrics.
-- **Prometheus Docker Command**: Runs the Prometheus container with the specified configuration file.
-- **Grafana Docker Command**: Runs the Grafana container, storing its data in a persistent volume.
-- **Node Exporter**: Monitors Node.js servers.
-- **PostgreSQL Exporter**: Monitors PostgreSQL databases.
-
-Ensure that the IP addresses and ports in the Prometheus configuration match the endpoints from which you want to scrape metrics. The Grafana interface will be accessible at `http://<your_server_ip>:3000`.
