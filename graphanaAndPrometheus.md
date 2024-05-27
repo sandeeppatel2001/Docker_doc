@@ -216,6 +216,18 @@ See This For More Information Regarding Kafka Exporter: https://stackoverflow.co
 - [6] Click Import, and the dashboard will be available for viewing and introspecting your Kafka broker metrics. Yay!
 - [7] Import the remaining dashboards, and you’re done!
 
+## NodeExporter Grafana Dashboard 
+
+<img width="762" alt="nodeexp" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/1bab389d-c2dc-42a0-87d6-586495e8bfe5">
+
+## PgsqlExporter Dashboard
+
+<img width="760" alt="pgsqlExpo" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/84ca3ebf-9989-4962-bc32-320154eae2b4">
+
+## KafkaExporter Grafana Dashboard
+
+<img width="506" alt="kafkaExpo" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/596ecafe-616f-421c-974d-0a09dac87cbc">
+
 ## Additional Steps
 
 1. **Access Grafana**:
