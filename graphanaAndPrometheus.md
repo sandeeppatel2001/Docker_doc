@@ -161,14 +161,60 @@ services:
 # EXPOSE : 29092
 ```
 See This For More Information Regarding Kafka Exporter: https://stackoverflow.com/a/70599882
-Run this docker-compose file and see the result:
+### Run this docker-compose file and see the result:
+
 <img width="568" alt="3-container running" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/f10926d5-ff60-4a02-b83a-e2627e7e1e7c">
 
-Go to `http://<your_server_ip>:9308` where you will able to see the kafka exporter like this:
+### Go to `http://<your_server_ip>:9308` where you will able to see the kafka exporter like this:
+
 <img width="640" alt="Screenshot 2024-05-27 010938" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/65d272aa-4238-41c7-a7d7-32b482828ce9">
 
-And if you click on Metrix then you will able to see the Matrix output like this:
+### And if you click on Metrix then you will able to see the Matrix output like this:
+
 <img width="698" alt="Screenshot 2024-05-27 011010" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/096b31bb-f341-4d3f-acbc-8fb7c77097ca">
+
+# Connecting Grafana to Prometheus
+- [1] First open Grafana UI and do logging like as mentioned upper;
+
+- [2] Navigate to Configuration > Data Sources.
+
+  <img width="346" alt="k1" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/083eb83b-3444-45ce-acbe-9ba14fe0cfdc">
+
+- [3] Click Add data source
+
+  <img width="416" alt="k2" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/4d4ca1bb-ea0d-4285-9a38-3f2fbaed4dff">
+
+- [4] You’ll see a number of options here. Prometheus should be close to the top. Hover over it and click Select.
+  
+  <img width="413" alt="k3" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/6e3bd4ab-3b20-4ef9-8b66-3edbc422e8ed">
+
+- [5] Fill out all the details for your Prometheus server in the form that appears. Then click Save & Test.
+
+   <img width="395" alt="k4" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/8537e681-95f3-4c25-b3b1-47de75d6eebd">
+
+- [6] Once you click Save & Test, you should see a green message bar similar to the one below. If you get an error message, resolve that first before moving on to next steps.
+
+  <img width="475" alt="k5" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/ff453c67-ed1a-4aed-ad08-72c3e1f20e76">
+  
+- [6] You can now close the page, as you have successfully set up Grafana communication with Prometheus as a data source.
+
+# Setting up Grafana dashboards
+- [1] Import the dashboards into Grafana using JSON files. Download all of the dashboards in the jmx-monitoring-stacks repository and save them to a known location in your local system.
+
+  <img width="410" alt="d1" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/312950d4-4f0f-477b-9272-c64c8609bf2d">
+
+- [2] Log in to your Grafana instance from the web browser.
+
+  <img width="470" alt="d2" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/bb7e2cb0-f31e-49df-b047-472c3234ca4e">
+
+- [3] Navigate to Dashboards > Manage.
+
+  <img width="631" alt="d3" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/cafde1c9-c7ff-441d-aae6-3b2b730f222b">
+
+- [4] Click Import.
+- [5] Click Upload .json file or give dashboard ID now that we have our dashboards available locally.
+- [6] Click Import, and the dashboard will be available for viewing and introspecting your Kafka broker metrics. Yay!
+- [7] Import the remaining dashboards, and you’re done!
 
 ## Additional Steps
 
