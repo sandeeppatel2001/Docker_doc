@@ -120,6 +120,7 @@ redis-exporter:
 Follow the instructions provided in the [Grafana Redis_exporter in Local Machine documentation](https://grafana.com/oss/prometheus/exporters/redis-exporter/?tab=installation) to set up `Redis_exporter` for monitoring Redis databases.
 
 Follow the instructions provided in the [Grafana Redis_exporter in Docker Container documentation](https://nelsoncode.medium.com/how-to-monitor-redis-with-prometheus-and-grafana-docker-6eb33a5ea998) to set up `Redis_exporter` for monitoring Redis databases.
+
 Output after runing docker file:
 ```
 sudo docker stack deploy -c docker-compose.yml swarmnodeapp 
@@ -242,6 +243,10 @@ See This For More Information Regarding Kafka Exporter: https://stackoverflow.co
 ## PgsqlExporter Dashboard
 
 <img width="760" alt="pgsqlExpo" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/84ca3ebf-9989-4962-bc32-320154eae2b4">
+
+## RedisExporter Dashboard
+
+<img width="539" alt="Screenshot 2024-06-01 011604" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/19b083e8-5e6e-452e-9220-a45b3d50190c">
 
 ## KafkaExporter Grafana Dashboard
 
