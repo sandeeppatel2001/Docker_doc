@@ -106,9 +106,28 @@ Follow the instructions provided in the [Grafana node_exporter documentation](ht
 Follow the instructions provided in the [Grafana postgres_exporter documentation](https://grafana.com/oss/prometheus/exporters/postgres-exporter/?tab=installation#step-1-setting-up-postgres-exporter) to set up `postgres_exporter` for monitoring PostgreSQL databases.
 
 ### Redis Exporter Setup
+Add this in you docker-compose file
+```
+redis-exporter:
+    image: oliver006/redis_exporter
+    ports:
+      - 9121:9121
+    environment:
+      REDIS_ADDR: "redis:6379"
+      REDIS_USER: null
+      REDIS_PASSWORD: my_master_password
+```
+Follow the instructions provided in the [Grafana Redis_exporter in Local Machine documentation](https://grafana.com/oss/prometheus/exporters/redis-exporter/?tab=installation) to set up `Redis_exporter` for monitoring Redis databases.
 
-Follow the instructions provided in the [Grafana Redis_exporter documentation](https://grafana.com/oss/prometheus/exporters/redis-exporter/?tab=installation) to set up `Redis_exporter` for monitoring Redis databases.
+Follow the instructions provided in the [Grafana Redis_exporter in Docker Container documentation](https://nelsoncode.medium.com/how-to-monitor-redis-with-prometheus-and-grafana-docker-6eb33a5ea998) to set up `Redis_exporter` for monitoring Redis databases.
+Output after runing docker file:
+```
+sudo docker stack deploy -c docker-compose.yml swarmnodeapp 
 
+Creating service swarmnodeapp_db
+Creating service swarmnodeapp_cache
+Creating service swarmnodeapp_redis-exporter
+```
 ### Kafka Exporter Setup
 For this we need to set-up Kafka exporter in docker-compose.yml file
 
