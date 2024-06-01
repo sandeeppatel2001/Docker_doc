@@ -182,7 +182,12 @@ services:
 ```
 See This For More Information Regarding Kafka Exporter: https://stackoverflow.com/a/70599882
 ### Run this docker-compose file and see the result:
-
+```
+cd kafka   # go inside where compose file exist
+```
+```
+sudo docker stack deploy -c docker-compose.yml kafkabysandeep
+```
 <img width="568" alt="3-container running" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/f10926d5-ff60-4a02-b83a-e2627e7e1e7c">
 
 ### Go to `http://<your_server_ip>:9308` where you will able to see the kafka exporter like this:
