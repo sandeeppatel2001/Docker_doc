@@ -129,6 +129,27 @@ Creating service swarmnodeapp_db
 Creating service swarmnodeapp_cache
 Creating service swarmnodeapp_redis-exporter
 ```
+## Monitoring a Linux host
+Add this in you docker-compose file
+```
+services:
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    expose:
+      - 9100
+```
+Follow the instructions provided in the [Monitoring a Linux host with Prometheus and Grafana documentation](https://grafana.com/docs/grafana-cloud/send-data/metrics/metrics-prometheus/prometheus-config-examples/docker-compose-linux/) to set up for monitoring Linux host.
 ### Kafka Exporter Setup
 For this we need to set-up Kafka exporter in docker-compose.yml file
 
@@ -256,6 +277,10 @@ sudo docker stack deploy -c docker-compose.yml kafkabysandeep
 ## KafkaExporter Grafana Dashboard
 
 <img width="506" alt="kafkaExpo" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/596ecafe-616f-421c-974d-0a09dac87cbc">
+
+## Monitoring a Linux host 
+
+<img width="960" alt="db1" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/8de95c1a-e0d8-4efa-b651-135fbee38bff">
 
 ## Summary
 
