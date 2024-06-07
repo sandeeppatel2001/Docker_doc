@@ -254,14 +254,12 @@ sudo docker stack deploy -c docker-compose.yml kafkabysandeep
   <img width="470" alt="d2" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/bb7e2cb0-f31e-49df-b047-472c3234ca4e">
 
 - [3] Navigate to Dashboards > Manage.
-
+- [4] Click Import.
   <img width="631" alt="d3" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/cafde1c9-c7ff-441d-aae6-3b2b730f222b">
 
-- [4] Click Import.
-- [5] Click Upload .json file or give dashboard ID now that we have our dashboards available locally.
-- [6] Click Import, and the dashboard will be available for viewing and introspecting your Kafka broker metrics. Yay!
-- [7] Import the remaining dashboards, and you’re done!
-
+- [5] Upload .json file or give dashboard ID like 721 or 18276  or anyother and Click Load button.
+- [6] Select data source like Prometheus and click Import, and the dashboard will be available for viewing and introspecting your Kafka broker metrics.
+- [7] Import the remaining dashboards(PgsqlExporter Dashboard, RedisExporter Dashboard, Node_exporter Dashboard) in the same way, and you’re done!
 ## NodeExporter Grafana Dashboard 
 
 <img width="762" alt="nodeexp" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/1bab389d-c2dc-42a0-87d6-586495e8bfe5">
