@@ -246,18 +246,18 @@ sudo docker stack deploy -c docker-compose.yml kafkabysandeep
 
 # Setting up Grafana dashboards
 - [1] Import the dashboards into Grafana using JSON files. Download all of the dashboards in the jmx-monitoring-stacks repository and save them to a known location in your local system.
-
-  <img width="410" alt="d1" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/312950d4-4f0f-477b-9272-c64c8609bf2d">
-
 - [2] Log in to your Grafana instance from the web browser.
-
-  <img width="470" alt="d2" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/bb7e2cb0-f31e-49df-b047-472c3234ca4e">
-
 - [3] Navigate to Dashboards > Manage.
+  <img width="410" alt="d1" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/312950d4-4f0f-477b-9272-c64c8609bf2d">
+  
 - [4] Click Import.
+  
+  <img width="470" alt="d2" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/bb7e2cb0-f31e-49df-b047-472c3234ca4e">
+  
+- [5] Upload .json file or give dashboard ID like 721 or 18276  or anyother and Click Load button.
+
   <img width="631" alt="d3" src="https://github.com/sandeeppatel2001/Docker_doc/assets/95873801/cafde1c9-c7ff-441d-aae6-3b2b730f222b">
 
-- [5] Upload .json file or give dashboard ID like 721 or 18276  or anyother and Click Load button.
 - [6] Select data source like Prometheus and click Import, and the dashboard will be available for viewing and introspecting your Kafka broker metrics.
 - [7] Import the remaining dashboards(PgsqlExporter Dashboard, RedisExporter Dashboard, Node_exporter Dashboard) in the same way, and you’re done!
 ## NodeExporter Grafana Dashboard 
